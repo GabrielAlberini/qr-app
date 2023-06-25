@@ -7,7 +7,7 @@ import './App.css'
 
 function App() {
   const [url, setUrl] = useState('');
-  const [darkMode, setDarkMode] = useState("")
+  const [darkMode, setDarkMode] = useState(true); // Modificado para iniciar en modo oscuro
   const [qrCodeValue, setQRCodeValue] = useState('');
   const qrCodeRef = useRef(null);
 
@@ -22,9 +22,9 @@ function App() {
   return (
     <div className={`app-container ${darkMode ? 'is-dark' : ''}`}>
       <section className={`app-container section ${darkMode ? 'has-background-dark' : ''}`}>
-      <button className={`button is-small is-dark-mode-button ${darkMode ? 'is-light' : ''} is-pulled-right`} onClick={handleDarkModeToggle}>
-        {darkMode ? 'Light Mode' : 'Dark Mode'}
-      </button>
+        <button className={`button is-small is-dark-mode-button ${darkMode ? 'is-light' : ''} is-pulled-right`} onClick={handleDarkModeToggle}>
+          {darkMode ? 'Light Mode' : 'Dark Mode'}
+        </button>
         <h1 className={`title has-text-centered pt-6 ${darkMode ? 'has-text-white' : ''}`}>Generador de Código QR Navegable</h1>
         <div className="columns is-centered">
           <div className="column is-6">
